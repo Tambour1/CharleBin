@@ -10,7 +10,7 @@
  * @version   1.5.1
  */
 
-namespace PrivateBin
+namespace P
 
 use Exception;
 use PDO;

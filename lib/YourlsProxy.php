@@ -1,11 +1,12 @@
 <?php
+
 /**
  * PrivateBin
  *
- * a zero-knowledge paste bin
+ * A zero-knowledge paste bin
  *
- * @link      https://github.com/PrivateBin/PrivateBin
  * @copyright 2012 Sébastien SAUVAGE (sebsauvage.net)
+ * @link      https://github.com/PrivateBin/PrivateBin * 
  * @license   https://www.opensource.org/licenses/zlib-license.php The zlib/libpng License
  * @version   1.5.1
  */
@@ -23,7 +24,7 @@ use Exception;
 class YourlsProxy
 {
     /**
-     * error message
+     * Error message
      *
      * @access private
      * @var    string
@@ -31,7 +32,7 @@ class YourlsProxy
     private $_error = '';
 
     /**
-     * shortened URL
+     * Shortened URL
      *
      * @access private
      * @var    string
@@ -39,11 +40,12 @@ class YourlsProxy
     private $_url = '';
 
     /**
-     * constructor
+     * Constructor
      *
-     * initializes and runs PrivateBin
+     * Initializes and runs PrivateBin
      *
      * @access public
+     * @param string $conf
      * @param string $link
      */
     public function __construct(Configuration $conf, $link)
@@ -60,7 +62,9 @@ class YourlsProxy
         }
 
         $data = file_get_contents(
-            $yourls_api_url, false, stream_context_create(
+            $yourls_api_url,
+            false,
+            stream_context_create(
                 array(
                     'http' => array(
                         'method'  => 'POST',
